@@ -18,36 +18,37 @@ function App ({avaibleOffers, favoriteOffers}: AppMainProps): JSX.Element {
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-          <Route 
+          <Route
             path={AppRoute.Main}
             element={<MainScreen avaibleOffers={avaibleOffers} favoriteOffers={favoriteOffers} />}
           />
-          <Route 
+          <Route
             path={AppRoute.Login}
             element={<LoginScreen />}
           />
-          <Route 
+          <Route
             path={AppRoute.Favorite}
             element={
-              <PrivateRoute 
-                autorizationStatus={AutorizationStatus.NoAuth}>
-                  <FavoritesScreen />
+              <PrivateRoute
+                autorizationStatus={AutorizationStatus.NoAuth}
+              >
+                <FavoritesScreen />
               </PrivateRoute>
             }
           />
-          <Route 
+          <Route
             path={AppRoute.Offer}
             element={<OfferScreen />}
           />
-          <Route 
+          <Route
             path='*'
             element={<NotFoundScreen />}
           />
         </Routes>
       </BrowserRouter>
-    </HelmetProvider>  
+    </HelmetProvider>
   );
 }
 
 
-export default App; 
+export default App;
