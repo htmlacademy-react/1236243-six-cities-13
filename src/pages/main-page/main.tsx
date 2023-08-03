@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet-async';
+
 type MainScreenProps = {
   avaibleOffers: number;
   favoriteOffers: number;
@@ -6,6 +8,9 @@ type MainScreenProps = {
 function MainScreen({avaibleOffers, favoriteOffers}: MainScreenProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
+      <Helmet>
+        <title>Main page</title>
+      </Helmet>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
